@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: wordpress-ui
+  template:
+    metadata:
+      labels:
+        app: wordpress-ui
+    spec:
+      containers:
+      - image: wordpress:6
+        name: wordpress-ui
+        ports:
+        - containerPort: 80
