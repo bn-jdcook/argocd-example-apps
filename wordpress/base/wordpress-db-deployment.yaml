@@ -23,6 +23,10 @@ spec:
             value: fake_password
           - name: MYSQL_DATABASE
             value: wordpress
+          - name: MYSQL_USER
+            value: wordpress-usr
+          - name: MYSQL_PASSWORD
+            value: wordpress-pwd
         ports:
         - name: mysql
           containerPort: 3306
