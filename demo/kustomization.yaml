@@ -5,6 +5,6 @@ kind: Kustomization
 ## resources
 #########################
 resources:
-  - base/httpd-deployment.yaml
-  - base/httpd-svc.yaml
-  - base/httpd-ingress.yaml
+  - base/demo-deployment.yaml
+  - base/demo-svc.yaml
+  - base/demo-ingress.yaml
