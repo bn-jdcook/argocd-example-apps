@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-db
+  labels:
+    name: wordpress-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: wordpress-db
+  template:
+    metadata:
+      labels:
+        name: wordpress-db
+    spec:
+      containers:
+      - name: wordpress-db
+        image: mysql:latest
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: fake_password
+          - name: MYSQL_DATABASE
+            value: wordpress
+        ports:
+        - name: mysql
+          containerPort: 3306
+      nodeSelector:
+        beta.kubernetes.io/os: linux
