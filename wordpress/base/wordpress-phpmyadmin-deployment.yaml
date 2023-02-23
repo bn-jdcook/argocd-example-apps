@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: phpmyadmin
+  name: wordpress-phpmyadmin
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: phpmyadmin
+      app: wordpress-phpmyadmin
   template:
     metadata:
       labels:
-        app: phpmyadmin
+        app: wordpress-phpmyadmin
     spec:
       containers:
         - image: phpmyadmin:latest
-          name: phpmyadmin
+          name: wordpress-phpmyadmin
           ports:
             - containerPort: 80
           env:
             - name: PMA_HOST
-              value: db
+              value: wordpress-db

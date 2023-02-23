@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: phpmyadmin-localhost
+  name: wordpress-ui-localhost
 spec:
   ingressClassName: nginx
   rules:
-    - host: phpmyadmin.test.local
+    - host: test.local
       http:
         paths:
           - backend:
               service:
-                name: phpmyadmin
+                name: wordpress-db
                 port:
-                  number: 80
+                  number: 3306
             path: /
             pathType: Prefix

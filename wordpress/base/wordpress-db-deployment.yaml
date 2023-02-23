@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db
+  name: wordpress-db
   labels:
-    name: db
+    name: wordpress-db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: db
+      name: wordpress-db
   template:
     metadata:
       labels:
-        name: db
+        name: wordpress-db
     spec:
       containers:
-      - name: db
+      - name: wordpress-db
         image: mysql:latest
         env:
           - name: MYSQL_ROOT_PASSWORD
