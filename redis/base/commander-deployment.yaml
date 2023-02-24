@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-commander
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: redis-commander
+  template:
+    metadata:
+      labels:
+        app: redis-commander
+    spec:
+      containers:
+        - image: commander:latest
+          name: redis-commander
+          ports:
+            - containerPort: 8081
+          env:
+            - name: REDIS_HOSTS
+              value: redis-db

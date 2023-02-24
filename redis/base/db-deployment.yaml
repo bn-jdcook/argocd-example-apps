@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-db
+  labels:
+    name: redis-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: redis-db
+  template:
+    metadata:
+      labels:
+        name: redis-db
+    spec:
+      containers:
+        - name: redis-db
+          image: redis:7
+          ports:
+            - name: redis
+              containerPort: 6379
+      nodeSelector:
+        beta.kubernetes.io/os: linux

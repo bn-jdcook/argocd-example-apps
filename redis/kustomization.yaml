@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+#########################
+## resources
+#########################
+resources:
+  - base/commander-deployment.yaml
+  - base/commander-ingress.yaml
+  - base/commander-svc.yaml
+  - base/db-deployment.yaml
+  - base/db-svc.yaml
