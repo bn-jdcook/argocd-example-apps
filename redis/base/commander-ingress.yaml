@@ -8,7 +8,10 @@ spec:
     - host: commander.test.local
       http:
         paths:
-          - path: "/"
-            backend:
-              serviceName: redis-commander
-              servicePort: 80
+          - backend:
+              service:
+                name: redis-commander
+                port:
+                  number: 8081
+            path: /
+            pathType: Prefix
