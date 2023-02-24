@@ -8,5 +8,5 @@ resources:
   - base/commander-deployment.yaml
   - base/commander-ingress.yaml
   - base/commander-svc.yaml
-  - base/db-deployment.yaml
-  - base/db-svc.yaml
+  - base/redis-deployment.yaml
+  - base/redis-svc.yaml

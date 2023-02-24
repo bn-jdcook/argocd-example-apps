@@ -2,24 +2,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-db
+  name: redis
   labels:
-    name: redis-db
+    name: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: redis-db
+      name: redis
   template:
     metadata:
       labels:
-        name: redis-db
+        name: redis
     spec:
       containers:
-        - name: redis-db
+        - name: redis
           image: redis:7
           ports:
             - name: redis
               containerPort: 6379
+        - name: redis-commander-2
+          image: ghcr.io/joeferner/redis-commander:latest
+          ports:
+            - name: http-odd
+              containerPort: 8081
+          env:
+            - name: REDIS_HOSTS
+              value: redis
       nodeSelector:
         beta.kubernetes.io/os: linux
