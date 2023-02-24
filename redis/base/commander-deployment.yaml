@@ -14,7 +14,7 @@ spec:
         app: redis-commander
     spec:
       containers:
-        - image: commander:latest
+        - image: ghcr.io/joeferner/redis-commander:latest
           name: redis-commander
           ports:
             - containerPort: 8081
