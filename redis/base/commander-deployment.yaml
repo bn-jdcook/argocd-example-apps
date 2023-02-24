@@ -20,4 +20,4 @@ spec:
             - containerPort: 8081
           env:
             - name: REDIS_HOSTS
-              value: redis-db
+              value: redis
