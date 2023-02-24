@@ -12,6 +12,6 @@ spec:
               service:
                 name: redis-commander
                 port:
-                  number: 8081
+                  number: 80
             path: /
             pathType: Prefix
