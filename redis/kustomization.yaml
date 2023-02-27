@@ -6,7 +6,6 @@ kind: Kustomization
 #########################
 resources:
   - base/commander-deployment.yaml
-  - base/commander-ingress.yaml
   - base/commander-svc.yaml
   - base/redis-deployment.yaml
   - base/redis-svc.yaml
