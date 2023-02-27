@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: wordpress-db
-        image: mysql:latest
+        image: bitnami/mysql:latest
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: fake_password
