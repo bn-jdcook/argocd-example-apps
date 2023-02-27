@@ -7,4 +7,3 @@ kind: Kustomization
 resources:
   - base/demo-deployment.yaml
   - base/demo-svc.yaml
-  - base/demo-ingress.yaml

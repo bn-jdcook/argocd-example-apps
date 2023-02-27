@@ -6,10 +6,8 @@ kind: Kustomization
 #########################
 resources:
   - base/wordpress-ui-deployment.yaml
-  - base/wordpress-ui-ingress.yaml
   - base/wordpress-ui-svc.yaml
   - base/wordpress-phpmyadmin-deployment.yaml
-  - base/wordpress-phpmyadmin-ingress.yaml
   - base/wordpress-phpmyadmin-svc.yaml
   - base/wordpress-db-deployment.yaml
   - base/wordpress-db-svc.yaml
