@@ -8,7 +8,7 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - svc.yaml
-#images:
+images:
 #  ## echo-api Image
-#  - name: bitnami/mysql
-#    newTag: 5.7
+  - name: bitnami/mysql
+    newTag: '5.7'
