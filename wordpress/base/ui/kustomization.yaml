@@ -11,5 +11,5 @@ resources:
 images:
   ## echo-api Image
   - name: wordpress-ui-img
-    newName: docker.io/wordpress
+    newName: docker.io/library/wordpress
     newTag: '6.2.2'
