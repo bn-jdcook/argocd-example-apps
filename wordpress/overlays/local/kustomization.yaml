@@ -11,7 +11,9 @@ namespace: tn-msp-echo-ci-auto
 ## resources
 #########################
 resources:
-  - ../../base/
+  - ../../base/db/
+  - ../../base/ui/
+  - ../../base/phpmyadmin/
 
 
 #########################
