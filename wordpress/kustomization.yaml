@@ -7,5 +7,4 @@ kind: Kustomization
 resources:
   - base/db/
   - base/ui/
-  - base/phpmyadmin/svc.yaml
-  - base/phpmyadmin/deployment.yaml
+  - base/phpmyadmin/
