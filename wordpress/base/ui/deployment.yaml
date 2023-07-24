@@ -14,7 +14,7 @@ spec:
         app: wordpress-ui
     spec:
       containers:
-        - image: wordpress:6
+        - image: wordpress-ui-img
           name: wordpress-ui
           ports:
             - containerPort: 80
