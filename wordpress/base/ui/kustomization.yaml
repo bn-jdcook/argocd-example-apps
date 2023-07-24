@@ -10,5 +10,6 @@ resources:
   - svc.yaml
 images:
   ## echo-api Image
-  - name: wordpress
+  - name: ui
+    newName: wordpress
     newTag: '6.2.1'
