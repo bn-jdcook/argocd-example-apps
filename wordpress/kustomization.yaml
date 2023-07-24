@@ -5,8 +5,7 @@ kind: Kustomization
 ## resources
 #########################
 resources:
-  - base/db/deployment.yaml
-  - base/db/svc.yaml
+  - base/db/
   - base/ui/deployment.yaml
   - base/ui/svc.yaml
   - base/phpmyadmin/svc.yaml
