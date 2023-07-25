@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: wordpress
     name: in-cluster
-  project: wordpress
+  project: default
   source:
     path: wordpress
     repoURL: https://github.com/bn-jdcook/argocd-example-apps
