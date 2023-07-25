@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    name: in-cluster
+  project: default
+  source:
+    path: apps2
+    repoURL: https://github.com/bn-jdcook/argocd-example-apps
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
