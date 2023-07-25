@@ -12,3 +12,11 @@ spec:
     path: apps2
     repoURL: https://github.com/bn-jdcook/argocd-example-apps
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - Validate=true
+      - CreateNamespace=true
