@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: root-app
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: default
@@ -14,6 +12,3 @@ spec:
     path: apps2
     repoURL: https://github.com/bn-jdcook/argocd-example-apps
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
