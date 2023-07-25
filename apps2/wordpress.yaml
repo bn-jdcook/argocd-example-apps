@@ -17,3 +17,8 @@ spec:
   syncPolicy:
     automated:
       prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - Validate=true
+      - CreateNamespace=true
