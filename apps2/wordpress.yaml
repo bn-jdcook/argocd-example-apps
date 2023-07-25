@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: wordpress
   namespace: argocd
 spec:
   destination:
     namespace: wordpress
     name: in-cluster
-  project: default
+  project: wordpress
   source:
     path: wordpress
     repoURL: https://github.com/bn-jdcook/argocd-example-apps
