@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-ui
+spec:
+  selector:
+    matchLabels:
+      app: wordpress-ui
+  template:
+    spec:
+      containers:
+        - name: wordpress-ui
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: wordpress-db
+            - name: WORDPRESS_DB_USER
+              value: wordpress-usr
+            - name: WORDPRESS_DB_PASSWORD
+              value: wordpress-pwd
+            - name: WORDPRESS_DB_NAME
+              value: wordpress

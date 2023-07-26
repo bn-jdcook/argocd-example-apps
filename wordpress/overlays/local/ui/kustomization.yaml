@@ -5,10 +5,10 @@ kind: Kustomization
 ## resources
 #########################
 resources:
-  - ui/
-  - ../../base/ui/
-  - ../../base/phpmyadmin/
+  - ../../../base/ui/
 
+#patchesStrategicMerge:
+#  - patches/deployment-env.yaml
 
 #########################
 ## Image Tags
