@@ -19,3 +19,5 @@ spec:
               value: wordpress-pwd
             - name: WORDPRESS_DB_NAME
               value: wordpress
+            - name: FOO
+              value: bar
