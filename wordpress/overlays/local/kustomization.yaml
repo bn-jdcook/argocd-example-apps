@@ -13,3 +13,7 @@ configMapGenerator:
   - name: ops-ingress-properties
     envs: [environment.properties]
     behavior: replace
+vars:
+  - name: BAT
+    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
+    fieldref: { fieldpath: data.BAT }
