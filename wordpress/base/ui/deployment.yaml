@@ -20,4 +20,4 @@ spec:
             - containerPort: 80
           env:
             - name: FOO
-              value: bar
+              value: $(FOO)
