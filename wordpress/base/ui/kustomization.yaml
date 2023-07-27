@@ -22,3 +22,6 @@ vars:
   - name: FOO
     objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
     fieldref: { fieldpath: data.FOO }
+  - name: BAR
+    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
+    fieldref: { fieldpath: data.BAR }

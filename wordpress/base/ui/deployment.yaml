@@ -21,3 +21,5 @@ spec:
           env:
             - name: FOO
               value: $(FOO)
+            - name: BAR
+              value: $(BAR)
