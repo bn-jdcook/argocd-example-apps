@@ -21,3 +21,5 @@ spec:
               value: wordpress
             - name: FOO
               value: bar
+            - name: BAT
+              value: $(BAT)
