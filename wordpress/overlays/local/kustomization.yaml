@@ -11,8 +11,11 @@ resources:
 
 configMapGenerator:
   - name: ops-ingress-properties
-    envs: [environment.properties]
     behavior: replace
+    literals:
+      - FOO=foo
+      - BAR=bar$(foo)
+      - BAT=tab
 vars:
   - name: BAT
     objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
