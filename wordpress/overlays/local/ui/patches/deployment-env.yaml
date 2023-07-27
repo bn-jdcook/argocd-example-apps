@@ -23,3 +23,5 @@ spec:
               value: bar
             - name: BAT
               value: $(BAT)
+            - name: TEST3
+              value: $(FOO)-$(BAT)-asdf
