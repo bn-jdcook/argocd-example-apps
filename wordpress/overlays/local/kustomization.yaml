@@ -12,4 +12,4 @@ resources:
 configMapGenerator:
   - name: ops-ingress-properties
     envs: [environment.properties]
-    behavior: replace # <======= critical
+    behavior: replace
