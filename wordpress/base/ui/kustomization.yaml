@@ -13,3 +13,12 @@ images:
   - name: wordpress-ui-img
     newName: docker.io/library/wordpress
     newTag: '6.2.2'
+
+configMapGenerator:
+  - name: ops-ingress-properties
+    envs: [environment.properties]
+
+vars:
+  - name: FOO
+    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
+    fieldref: { fieldpath: data.FOO }
