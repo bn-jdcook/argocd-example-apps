@@ -9,10 +9,11 @@ resources:
   - ui/
   - ../../base/phpmyadmin/
 
+configMapGenerator:
+  - name: ops-ingress-properties2
+    envs: [environment.properties]
 
-#########################
-## Image Tags
-#########################
-#images:
-#  - name:
-#    newTag:
+vars:
+  - name: FOO
+    objref: { kind: ConfigMap, name: ops-ingress-properties2, apiVersion: v1 }
+    fieldref: { fieldpath: data.FOO }
