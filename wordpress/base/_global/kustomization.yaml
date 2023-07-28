@@ -1,24 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-#########################
-## resources
-#########################
-resources:
-  - ../../base/db/
-  - ui/
-  - ../../base/phpmyadmin/
-  - ../../base/nginx/
-  - ../../base/_global/
-
 configMapGenerator:
   - name: ops-ingress-properties
-    behavior: replace
     literals:
       - FOO=foo
       - BAR=bar$(foo)
       - BAT=tab
+
 vars:
-  - name: BAT
+  - name: FOO
     objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
-    fieldref: { fieldpath: data.BAT }
+    fieldref: { fieldpath: data.FOO }
+  - name: BAR
+    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
+    fieldref: { fieldpath: data.BAR }

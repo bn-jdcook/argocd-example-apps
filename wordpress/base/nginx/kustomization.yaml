@@ -13,17 +13,3 @@ images:
   - name: nginx-img
     newName: nginx
     newTag: '1.25'
-
-configMapGenerator:
-  - name: ops-ingress-properties
-    literals:
-      - FOO=poopoo
-      - BAR=bell
-
-vars:
-  - name: FOO
-    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
-    fieldref: { fieldpath: data.FOO }
-  - name: BAR
-    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
-    fieldref: { fieldpath: data.BAR }
