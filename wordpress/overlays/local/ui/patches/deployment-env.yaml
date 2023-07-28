@@ -20,7 +20,7 @@ spec:
             - name: WORDPRESS_DB_NAME
               value: wordpress
             - name: FOO
-              value: bar
+              value: bar2
             - name: BAT
               value: $(BAT)
             - name: TEST3
