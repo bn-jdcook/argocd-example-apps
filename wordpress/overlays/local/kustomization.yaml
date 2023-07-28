@@ -8,6 +8,7 @@ resources:
   - ../../base/db/
   - ui/
   - ../../base/phpmyadmin/
+  - ../../base/nginx/
 
 configMapGenerator:
   - name: ops-ingress-properties
