@@ -22,6 +22,19 @@ configMapGenerator:
       - BAR=bar$(foo)
       - BAT=tab
       - UI_URL=foo.ui.nowhere.com
+replacements:
+  - source:
+      kind: configMap
+      name: ops-ingress-properties
+      fieldPath: data.UI_URL
+    targets:
+     - select:
+        kind: Ingress
+        name: ui-ingress
+       fieldPaths:
+        - spec.rules.[host=ui.nowhere.com].host
+
+
 vars:
   - name: BAT
     objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
