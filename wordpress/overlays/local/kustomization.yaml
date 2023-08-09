@@ -24,7 +24,7 @@ configMapGenerator:
       - UI_URL=foo.ui.nowhere.com
 replacements:
   - source:
-      kind: configMap
+      kind: ConfigMap
       name: ops-ingress-properties
       fieldPath: data.UI_URL
       version: v1
