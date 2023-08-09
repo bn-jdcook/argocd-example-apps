@@ -21,6 +21,7 @@ configMapGenerator:
       - FOO=foo
       - BAR=bar$(foo)
       - BAT=tab
+      - UI_URL=foo.ui.nowhere.com
 vars:
   - name: BAT
     objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
