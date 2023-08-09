@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: msp-echo-web-ingress
+spec:
+  rules:
+  - host: bob.nowhere.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-svc
+            port:
+              number: 80
+  - host: fred.nowhere.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-svc
+            port:
+              number: 80

@@ -11,6 +11,9 @@ resources:
   - ../../base/nginx/
   - ../../base/_global/
 
+patches:
+  - path: nginx/patch-ingress.yaml
+
 configMapGenerator:
   - name: ops-ingress-properties
     behavior: replace
