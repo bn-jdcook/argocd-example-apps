@@ -27,6 +27,7 @@ replacements:
       kind: configMap
       name: ops-ingress-properties
       fieldPath: data.UI_URL
+      version: v1
     targets:
      - select:
         kind: Ingress
