@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: msp-echo-web-ingress
+  annotations:
+    external-dns.alpha.kubernetes.io/ingress-hostname-source: "defined-hosts-only"
+spec:
+  ingressClassName: nginx-internal
+  rules:
+  - host: nowhere.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-svc
+            port:
+              number: 80
