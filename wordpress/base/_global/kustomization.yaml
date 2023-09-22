@@ -7,12 +7,6 @@ configMapGenerator:
       - FOO=foo
       - BAR=bar$(foo)
       - BAT=tab
-  - name: dctest1
-    literals:
-      - A1=A1
-      - B1=B1
-      - C1=C1
-      - D1=D1
 
 vars:
   - name: FOO
