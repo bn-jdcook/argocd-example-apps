@@ -23,7 +23,7 @@ configMapGenerator:
       - BAT=tab
       - UI_URL=foo.ui.nowhere.com
   - name: dctest1
-    behavior: replace
+    behavior: merge
     literals:
       - A1=A2
 replacements:
