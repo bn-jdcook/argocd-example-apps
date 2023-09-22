@@ -5,38 +5,38 @@ kind: Kustomization
 ## resources
 #########################
 resources:
-  - ../../base/db/
+#  - ../../base/db/
 #  - ui/
 #  - ../../base/phpmyadmin/
 #  - ../../base/nginx/
   - ../../base/_global/
 
-patches:
-  - path: nginx/patch-ingress.yaml
-
-configMapGenerator:
-  - name: ops-ingress-properties
-    behavior: replace
-    literals:
-      - FOO=foo
-      - BAR=bar$(foo)
-      - BAT=tab
-      - UI_URL=foo.ui.nowhere.com
-replacements:
-  - source:
-      kind: ConfigMap
-      name: ops-ingress-properties
-      fieldPath: data.UI_URL
-      version: v1
-    targets:
-     - select:
-        kind: Ingress
-        name: ui-ingress
-       fieldPaths:
-        - spec.rules.[host=ui.nowhere.com].host
-
-
-vars:
-  - name: BAT
-    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
-    fieldref: { fieldpath: data.BAT }
+#patches:
+#  - path: nginx/patch-ingress.yaml
+#
+#configMapGenerator:
+#  - name: ops-ingress-properties
+#    behavior: replace
+#    literals:
+#      - FOO=foo
+#      - BAR=bar$(foo)
+#      - BAT=tab
+#      - UI_URL=foo.ui.nowhere.com
+#replacements:
+#  - source:
+#      kind: ConfigMap
+#      name: ops-ingress-properties
+#      fieldPath: data.UI_URL
+#      version: v1
+#    targets:
+#     - select:
+#        kind: Ingress
+#        name: ui-ingress
+#       fieldPaths:
+#        - spec.rules.[host=ui.nowhere.com].host
+#
+#
+#vars:
+#  - name: BAT
+#    objref: { kind: ConfigMap, name: ops-ingress-properties, apiVersion: v1 }
+#    fieldref: { fieldpath: data.BAT }
