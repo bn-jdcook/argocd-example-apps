@@ -34,7 +34,5 @@ spec:
           exec:
             # Check we can execute queries over TCP (skip-networking is off).
             command: [ "cat", "/opt/bitnami/mysql/tmp/mysqld.pid" ]
-          initialDelaySeconds: 180
-          periodSeconds: 60
       nodeSelector:
         beta.kubernetes.io/os: linux
