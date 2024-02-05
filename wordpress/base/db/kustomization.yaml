@@ -11,4 +11,4 @@ resources:
 images:
 #  ## echo-api Image
   - name: bitnami/mysql
-    newTag: '5.7'
+    newTag: '8.0'
