@@ -35,5 +35,6 @@ spec:
             command:
               - "cat"
               - "/opt/bitnami/mysql/tmp/mysqld2.pid"
+          periodSeconds: 120
       nodeSelector:
         beta.kubernetes.io/os: linux
