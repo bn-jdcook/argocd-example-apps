@@ -33,9 +33,10 @@ spec:
         livenessProbe:
           exec:
             command:
-              - "test $(($(date +%M)%10)) -eq 3 && echo 1 || echo 2"
+              - /bin/bash
+              - -c
+              - "test $(($(date +%M)%10)) -eq 0 && cat /var/null || cat /opt/bitnami/mysql/tmp/mysqld.pid"
           failureThreshold: 1
-          initialDelaySeconds: 300
         startupProbe:
           exec:
             command:
