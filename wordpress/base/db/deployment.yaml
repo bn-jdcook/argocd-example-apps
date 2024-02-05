@@ -37,6 +37,7 @@ spec:
               - -c
               - "test $(($(date +%M)%10)) -eq 0 && exit 1 || exit 0"
           failureThreshold: 1
+          terminationGracePeriodSeconds: 1
         startupProbe:
           exec:
             command:
