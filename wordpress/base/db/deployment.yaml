@@ -33,8 +33,9 @@ spec:
         livenessProbe:
           exec:
             command:
-              - "test $(($(date +%M)%10)) -eq 3"
+              - "test $(($(date +%M)%10)) -eq 3 && echo 1 || echo 2"
           failureThreshold: 1
+          initialDelaySeconds: 300
         startupProbe:
           exec:
             command:
