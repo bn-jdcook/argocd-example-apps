@@ -33,9 +33,7 @@ spec:
         livenessProbe:
           exec:
             command:
-              - bash
-              - -c
-              - "test  $(($(date +%M)%10)) -eq 0 && exit 1 || exit 0"
+              - "test  $(($(date +%M)%10)) -eq 0 && cat /var/null || ls /var"
           failureThreshold: 1
         startupProbe:
           exec:
