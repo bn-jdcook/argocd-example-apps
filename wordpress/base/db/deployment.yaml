@@ -33,8 +33,8 @@ spec:
         livenessProbe:
           exec:
             command:
-              - "exit"
-              - "$(test $(date +%M) -eq 01 && echo 1 || echo 0)"
+              - "test  $(($(date +%M)%10)) -eq 0 && exit 1 || cat /opt/bitnami/mysql/tmp/mysqld.pid"
+          failureThreshold: 1
         startupProbe:
           exec:
             command:
