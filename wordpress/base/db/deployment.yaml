@@ -35,7 +35,7 @@ spec:
             command:
               - /bin/bash
               - -c
-              - "test $(($(date +%M)%10)) -eq 0 && exit 1 || exit 0"
+              - "test $(date +%M) -eq 45 && exit 1 || exit 0"
           failureThreshold: 1
           initialDelaySeconds: 60
           terminationGracePeriodSeconds: 1
