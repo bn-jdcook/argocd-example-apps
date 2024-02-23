@@ -28,3 +28,12 @@ spec:
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 5
+        - image: nginx:latest
+          name: nginx
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
