@@ -9,7 +9,7 @@ resources:
   - ../../base/liveliness-test/
   - ui/
   - ../../base/phpmyadmin/
-#  - ../../base/nginx/
+  - ../../base/nginx/
   - ../../base/_global/
 
 #patches:
