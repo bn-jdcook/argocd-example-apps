@@ -9,6 +9,7 @@ resources:
   - deployment.yaml
   - svc.yaml
   - ingress.yaml
+  - scaler.yaml
 images:
   ## echo-api Image
   - name: nginx-img

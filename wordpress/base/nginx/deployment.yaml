@@ -23,3 +23,9 @@ spec:
               value: $(FOO)
             - name: BAR
               value: $(BAR)
+          resources:
+            limits:
+              memory: 2G
+            requests:
+              cpu: 1m
+              memory: 64M
