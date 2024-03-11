@@ -15,7 +15,7 @@ spec:
         run: nginx
     spec:
       containers:
-        - image: nginx
+        - image: nginx:1.25-alpine
           name: nginx
           ports:
             - containerPort: 80
