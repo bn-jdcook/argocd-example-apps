@@ -12,6 +12,6 @@ resources:
   - scaler.yaml
 images:
   ## echo-api Image
-  - name: nginx-img
+  - name: nginx
     newName: nginx
     newTag: '1.25'
