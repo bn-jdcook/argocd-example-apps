@@ -15,7 +15,7 @@ spec:
         run: nginx
     spec:
       containers:
-        - image: nginx-img
+        - image: nginx
           name: nginx
           ports:
             - containerPort: 80
