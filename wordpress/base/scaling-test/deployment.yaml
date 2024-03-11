@@ -1,29 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: php-apache
 spec:
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nginx
-      run: nginx
+      run: php-apache
   template:
     metadata:
       labels:
-        app: nginx
-        run: nginx
+        run: php-apache
     spec:
       containers:
-        - image: nginx-img
-          name: nginx
+        - name: php-apache
+          image: registry.k8s.io/hpa-example
           ports:
             - containerPort: 80
-          env:
-            - name: FOO
-              value: $(FOO)
-            - name: BAR
-              value: $(BAR)
           resources:
             limits:
               cpu: 500m
