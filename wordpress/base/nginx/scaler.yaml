@@ -7,6 +7,6 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: nginx
-  minReplicas: 3
+  minReplicas: 4
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 20
